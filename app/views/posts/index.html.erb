@@ -1,7 +1,19 @@
-<h1>Photogram</h1>
 
+ <div class="row posts-wrapper">
 <% @posts.each do |post| %>
-  <%= image_tag post.image.url, height: '640'%>
-  <%= post.caption %>
+
+  	<div class="post">
+  	<div class="post-head">
+  		<div class="name">UserName</div>
+  	</div>
+  		<div class="image center-block">
+    	  <%= image_tag post.image.url, width: '640x', class: 'img-responsive'%>
+    	</div>
+    	<p class="caption">
+    	 <%= post.caption %>
+    	</p>
+  		
+
 
 <%end%>
+</div>
