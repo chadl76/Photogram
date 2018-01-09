@@ -1,1 +1,7 @@
 <h1>Photogram</h1>
+
+<% @posts.each do |post| %>
+  <%= image_tag post.image.url, height: '640'%>
+  <%= post.caption %>
+
+<%end%>
