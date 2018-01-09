@@ -83,10 +83,15 @@
 }
 
 .form-wrapper {
-	width: 60%;
+	width: 40%;
 	margin: 20px auto;
 	background-color: #fff;
 	padding: 40px;
 	border: 1px solid #eeefef;
 	border-radius: 3px;
+}
+
+.cancel-btn {
+	position:relative;
+	left: 240px;
 }

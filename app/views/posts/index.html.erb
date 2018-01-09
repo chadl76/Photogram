@@ -7,7 +7,7 @@
   		<div class="name">UserName</div>
   	</div>
   		<div class="image center-block">
-    	  <%= image_tag post.image.url, width: '640x', class: 'img-responsive'%>
+    	  <%= link_to (image_tag post.image.url, width: '640x', class: 'img-responsive'), post_path(post)%>
     	</div>
     	<p class="caption">
     	 <%= post.caption %>
