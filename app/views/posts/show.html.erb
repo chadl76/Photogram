@@ -1,0 +1,19 @@
+<div class="row posts-wrapper">
+	<div class="post">
+		<div class="post-head">
+			<div class="name"><%=@post.user.username%></div>
+		</div>
+		<div class="image center-block">
+			<%=image_tag @post.image.url, width: '640x', class: 'img-responsive'%>
+			<p class="caption text-center"><%=@post.caption %>
+			
+			<%if @post.user_id = current_user.id %>
+			  <%=link_to "Edit", edit_post_path(@post), class: 'edit-btn' %>	
+			   <%=link_to "Cancel", posts_path, class: 'cancel-btn' %>
+			<%else%>
+		      <%=link_to "Cancel", posts_path, class: 'cancel-btn' %>
+			<%end%>
+	</p>
+	</div>
+</div>
+</div>
