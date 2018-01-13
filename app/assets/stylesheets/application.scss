@@ -89,7 +89,7 @@
 }
 
 .form-wrapper {
-	width: 60%;
+	width: 40%;
 	margin: 20px auto;
 	background-color: #fff;
 	padding: 40px;
@@ -97,6 +97,7 @@
 	border-radius: 3px;
 }
 
+<<<<<<< HEAD
 .delete-link {
 	margin-left: 278px;
 }
@@ -189,4 +190,9 @@
 
 .post-edit-btn {
 	margin-left: 290px;
+=======
+.cancel-btn {
+	position:relative;
+	left: 240px;
+>>>>>>> 2114ce4847c959055ea00906c24850b331e805ec
 }

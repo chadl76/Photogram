@@ -1,6 +1,7 @@
 <div class="row posts-wrapper">
 	<div class="post">
 		<div class="post-head">
+
 			<div class="name"><%=@post.user.username%></div>
 		</div>
 		<div class="image center-block">
@@ -15,4 +16,6 @@
     		<%=render partial: 'comments/comment_form', :locals => {:post => @post} %>
 		</div>
    </div>
+
+		
 </div>

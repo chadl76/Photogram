@@ -1,6 +1,12 @@
+
 <div class="row posts-wrapper">
 <%= image_tag @post.image.url(:medium), class: 'img-responsive'%>
 </div>
+
+
+
+
+
 <div class="form-wrapper">
 <%=simple_form_for @post, html: { class: 'form-horizontal', multipart: true} do |form| %>
   <div class="form-group">
@@ -13,6 +19,8 @@
   <%=form.button :submit, class: 'btn-success' %>
   </div>
 
+
 <div class="delete-link"><%=link_to "Delete", post_path(@post), method: :delete %></div>
 <%end%>
+
 </div>
