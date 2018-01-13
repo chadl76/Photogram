@@ -5,9 +5,18 @@ class CommentsController < ApplicationController
 	def create
 		@comment = @post.comments.build(comment_params)
 		@comment.user_id = current_user.id
-		if @comment.save!
-			redirect_to :root
-		end
+		respond_to do |format|
+		  if @comment.save!
+			format.html {redirect_to :root }
+			format.js
+		  end
+	    end
+	end
+
+	def destroy
+		@comment = @post.comments.find(params[:id])
+		@comment.destroy
+		redirect_to :root
 	end
 
 	private

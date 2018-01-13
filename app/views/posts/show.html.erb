@@ -5,15 +5,14 @@
 		</div>
 		<div class="image center-block">
 			<%=image_tag @post.image.url, width: '640x', class: 'img-responsive'%>
-			<p class="caption text-center"><%=@post.caption %>
-			
-			<%if @post.user_id = current_user.id %>
-			  <%=link_to "Edit", edit_post_path(@post), class: 'edit-btn' %>	
-			   <%=link_to "Cancel", posts_path, class: 'cancel-btn' %>
-			<%else%>
-		      <%=link_to "Cancel", posts_path, class: 'cancel-btn' %>
-			<%end%>
-	</p>
-	</div>
-</div>
+			<p class="caption text-center"><%=@post.caption %></p>
+			<div class="post-edit-btn">
+			<%=render partial: 'posts/post_links', :locals => {:post => @post} %>
+		</div>
+
+			<%=render partial: "comments/comment_content", :locals => {:post=> @post} %>
+
+    		<%=render partial: 'comments/comment_form', :locals => {:post => @post} %>
+		</div>
+   </div>
 </div>

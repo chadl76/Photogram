@@ -56,7 +56,7 @@ class PostsController < ApplicationController
 	end
 
 	def owned_post
-		unless current_user == @post.current_user
+		unless current_user == @post.user
 			flash[:alert] = "Post isn't yours"
 			redirect_to root_paths
 		end

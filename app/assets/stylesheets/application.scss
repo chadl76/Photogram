@@ -17,8 +17,14 @@
  *
  */
 
+
+ html {
+ 	height: 100%;
+ }
+
  body {
- 	
+
+ 
  	background-color: #fafafa;
  	font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
  }
@@ -96,7 +102,16 @@
 }
 
 .comment-wrapper {
-	background-color: #eeefef;
+	
+}
+
+.comment {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 2px;
+}
+.comment-form {
+		background-color: #eeefef;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
@@ -113,4 +128,65 @@
 
 .comment-btn {
 	margin-left: 6px;
+}
+
+.content {
+  font-size: 15px;
+  line-height: 18px;
+  border: medium none;
+  width: 100%;
+  color: #4B4F54;
+  margin-bottom: 5px;
+  line-height: 16px;
+  border-bottom-style: solid;
+  border-color: #EEff;
+  border-width: 1px;
+  padding-bottom: 10px;
+}
+
+.comment-name {
+	font-weight: 500px;
+	margin-top: 7px;
+	color: #125688;
+	font-size: 15px;
+	display: inline;
+}
+
+.login-bg {
+	width: 120%;
+	height: 120%;
+	padding-top: 4em;
+	background-image: image-url('surf.jpg');
+	  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+	background-size: cover;
+	margin-top: 15px;
+}
+
+.log-in-panel {
+	background-color: #FFF;
+	border-radius: 2%;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #eeefef;
+	height: 466px;
+	padding: 13px;
+	width: 410px;
+	margin-bottom: 205px;
+	margin-left: 93px;
+}
+
+.panel-heading {
+	h2 {
+		text-align: center;
+	}
+}
+
+.comment-delete-btn {
+	margin-left: 2px;
+}
+
+.post-edit-btn {
+	margin-left: 290px;
 }

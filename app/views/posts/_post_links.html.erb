@@ -1,0 +1,8 @@
+<%if @post.user_id = current_user.id %>
+ 
+  <%=link_to "Edit", edit_post_path(@post), class: 'edit-btn' %> |	
+  <%=link_to "Cancel", posts_path, class: 'cancel-btn' %>
+  <%else%>
+  <%=link_to "Cancel", posts_path, class: 'cancel-btn' %>
+
+<%end%>

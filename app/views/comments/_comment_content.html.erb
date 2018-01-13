@@ -1,0 +1,27 @@
+<div class="comment_<%="#{post.id}"%>">
+<div class="comment-wrapper">
+    <div class="comment">
+       
+      <%if post.comments %>
+    	<%post.comments.each do |comment| %>
+            <div class="comment-name">
+    			<%=comment.user.username %>
+    		</div>
+              
+            <div class="content"> 
+                
+    		  <%=comment.content %>
+               <%if (current_user === comment.user)%>
+                <span><%=link_to "Delete", post_comment_path(post,comment), :method=> :delete, :class=> "comment-delete-btn"%>
+                <%end%>
+                </span>
+                
+    		</div>
+        
+                <%end%>
+                 <%end%>
+            </div>
+    </div>
+</div>
+
+    
