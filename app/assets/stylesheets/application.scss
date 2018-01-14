@@ -35,6 +35,9 @@
 		color: #125688;
 	
 }
+.navbar {
+	margin-bottom: 0px;
+}
 
 .navbar-default {
 	background-color: #fff;
@@ -66,7 +69,12 @@
 }
 
 .name {
-	display: block;
+	display: -webkit-inline-box;
+}
+
+.time {
+	color: #878794;
+	margin-top: 5px;
 }
 
 .post-head {
@@ -97,7 +105,6 @@
 	border-radius: 3px;
 }
 
-<<<<<<< HEAD
 .delete-link {
 	margin-left: 278px;
 }
@@ -154,10 +161,10 @@
 }
 
 .login-bg {
-	width: 120%;
-	height: 120%;
+	width: 100%;
+	height: 950px;
 	padding-top: 4em;
-	background-image: image-url('surf.jpg');
+	background: url('highway.jpg') no-repeat center center fixed;
 	  -moz-background-size: cover;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -175,7 +182,7 @@
 	padding: 13px;
 	width: 410px;
 	margin-bottom: 205px;
-	margin-left: 93px;
+	margin-left: 445px;
 }
 
 .panel-heading {
@@ -185,14 +192,71 @@
 }
 
 .comment-delete-btn {
-	margin-left: 2px;
+	
+	color: #8e8787;
 }
 
 .post-edit-btn {
 	margin-left: 290px;
-=======
-.cancel-btn {
-	position:relative;
-	left: 240px;
->>>>>>> 2114ce4847c959055ea00906c24850b331e805ec
+}
+
+
+.register-bg {
+	width: 100%;
+	height: 950px;
+	padding-top: 4em;
+	background: url('highway.jpg') no-repeat center center fixed;
+	  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+	background-size: cover;
+	margin-top: 15px;
+}
+
+
+.sign-up-panel {
+	background-color: #FFF;
+	border-radius: 2%;
+	border-width: 2px;
+	border-style: solid;
+	border-color: #eeefef;
+	height: 75%;
+	padding: 13px;
+	width: 410px;
+	margin-bottom: 205px;
+	margin-left: 445px;
+}
+
+
+.load-more-wrapper {
+	color: #4090DB;
+	display: table;
+	font-size: 12px;
+	height: 120px;
+	width: 120px;
+	border: 2px solid #2D6DA8;
+	border-radius: 50%;
+	:hover {
+		border: 1px solid #2D6DA8;
+		border-radius: 50%;
+	}
+
+}
+
+
+
+.load-more-posts-btn {
+	display: table-cell;
+	font-size: 13px;
+	padding: 0px 25px;
+	vertical-align: middle;
+	text-decoration: none;
+	a :hover {
+		color: #2D6DA8;
+	}
+}
+
+.show-more-links {
+	margin-left: 32%;
+	padding: 8px;
 }

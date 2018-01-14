@@ -1,7 +1,8 @@
 
  <div class="row posts-wrapper">
-<% @posts.each do |post| %>
 
+<% @posts.each do |post| %>
+   
   	<div class="post">
 
     <%= render partial: "posts/post_header", :locals => {:post => post}%>
@@ -13,4 +14,12 @@
 
 
 <%end%>
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-4">
+				<div class="load-more-wrapper">
+					<%=link_to "Load More", posts_path, :class=>"load-more-posts-btn" %>
+				</div>
+			</div>
+		</div>
+<%= paginate @posts %>
 </div>

@@ -4,7 +4,8 @@ class PostsController < ApplicationController
 	before_action :owned_post, only: [:edit, :update, :destroy]
 
 	def index
-		@posts = Post.all
+		@posts = Post.page(params[:page]).order("created_at DESC")
+		
 	end
 
 	def new
@@ -17,6 +18,9 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+
+		@comments = Comment.page(params[:page])
+		
 	end
 
 	def update
@@ -81,7 +85,7 @@ class PostsController < ApplicationController
 	def owned_post
 		unless current_user == @post.user
 			flash[:alert] = "Post isn't yours"
-			redirect_to root_paths
+			redirect_to root_path
 		end
 	end
 end
