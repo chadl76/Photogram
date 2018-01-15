@@ -2,18 +2,23 @@
  <div class="row posts-wrapper">
 
 <% @posts.each do |post| %>
-   
+    
   	<div class="post">
 
     <%= render partial: "posts/post_header", :locals => {:post => post}%>
-    <%= render partial: "comments/comment_content", :locals => {:post=> post} %>
+  
+    <%= render partial: "comments/comment_content", :locals => {:post=> post} %><div class="comment_<%=post.id%>"></div>
+
     <%=render partial: 'comments/comment_form', :locals => {:post => post} %>
+    
     
     </div>
 
 
 
 <%end%>
+		
+		<%if @posts.any? %>
 		<div class="row">
 			<div class="col-xs-6 col-xs-offset-4">
 				<div class="load-more-wrapper">
@@ -21,5 +26,6 @@
 				</div>
 			</div>
 		</div>
-<%= paginate @posts %>
+		<%= paginate @posts %>
+		<%end%>
 </div>

@@ -5,9 +5,8 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.page(params[:page]).order("created_at DESC")
-		
 	end
-
+	
 	def new
 		@post = current_user.posts.build
 	end
@@ -18,17 +17,19 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
-
 		@comments = Comment.page(params[:page])
-		
+
+		respond_to do |format|
+			format.html {render :show}
+			format.js {}
+		end				
 	end
 
 	def update
 		@post = Post.find(params[:id])
 		@post.update(post_params)
 		
-			redirect_to post_path(@post)
-	
+		redirect_to post_path(@post)
 	end
 
 	def destroy
@@ -38,9 +39,7 @@ class PostsController < ApplicationController
 		redirect_to :root
 	end
 
-
 	def create
-		
 		@post = current_user.posts.build(post_params)
 		if @post.save
 		flash[:success] = "post created"
@@ -49,29 +48,8 @@ class PostsController < ApplicationController
 			flash.now[:alert] = "couldn't create post"
 			render :new
 		end
-	
 	end
-
-	def edit
 		
-
-	end
-
-	def show
-		@post
-	end
-
-	def update
-		@post.update(post_params)
-
-		redirect_to post_path(@post)
-	end
-
-	def destroy
-		@post.destroy
-		redirect_to root_path
-	end
-
 	private
 
 	def post_params

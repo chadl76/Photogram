@@ -1,4 +1,4 @@
-<div class="comment-form">
+<div class="comment-form" >
     <%=form_for [post, post.comments.new], :remote => true do |f| %>
     	<div class="comment-text-field">
     		<%=f.text_field :content, placeholder: "Add a comment...", :class=>"comment-field-input", id: "comment_content_#{post.id}" %>
