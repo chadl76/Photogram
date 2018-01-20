@@ -1,5 +1,25 @@
 
 <div class="bio-wrapper">
+		<div class="profile-data-wrapper">
+		<div class="row">
+				<div class="col-xs-1 col-xs-offset-4">
+					<div class="post-count-data text-center">Post</div>
+					<div class="text-center"><%=current_user.posts.count%></div>
+				</div>
+
+				
+			<div class="col-xs-1">
+				<div class="post-following-data text-center">Following</div>
+				<div class="text-center"><%=current_user.following.count%></div>
+			</div>
+				
+			<div class="col-xs-1">
+				<div class="post-followers-data text-center">Followers</div>
+					<div class="text-center"><%=current_user.followers.count%></div>
+			</div>
+	</div>
+</div>
+			
 	<div class="row">
 		<div class="col-xs-2 col-xs-offset-4 bio">
 			<div class="img-circle">
@@ -12,17 +32,9 @@
 				<h2><%=@user.username%></h2>		
 			</div>
 			
-			<%if @user == current_user%>
-			<span><%=link_to "Edit Profile", edit_profile_path(@user.username), :class=> "btn btn-default profile-btn" %>	
-			</span>
-			<%else%>
-			<% if current_user_is_following(current_user.id, @user.id) %>
-			 <span><%=link_to "Following", unfollow_user_path, remote: true, :class => 'btn btn-default unfollow-btn', id: 'unfollow-btn', method: :post%></span>
-			 <%else%>
-			  <span><%=link_to "Follow", follow_user_path, remote: true, :class => 'btn btn-default follow-btn', id: 'follow-btn', method: :post%></span>
 			
-			<%end%>
-			<%end%>
+			<%= render partial: "profiles/following_links" %>
+			
 			<div class="user-bio">
 				<%=@user.bio%>
 			</div>
@@ -45,7 +57,7 @@
 	<%=render partial: 'comments/comment_form', :locals => {:post => post} %>
    </div>
   <%end%>
-  <%if @posts.any? %>
+  <%if @posts.count > 6 %>
 	<div class="row">
 		<div class="col-xs-6 col-xs-offset-4">
 			<div class="load-more-wrapper">

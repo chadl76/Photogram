@@ -41,7 +41,7 @@ gem 'binding_of_caller'
 gem 'will_paginate'
 gem 'kaminari', '~>0.17.0'
 gem 'acts_as_votable'
-
+gem 'envyable'
 gem 'devise'
 gem 'bootstrap-sass'
 

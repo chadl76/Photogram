@@ -75,6 +75,8 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    envyable (1.2.0)
+      thor (>= 0.18.1, < 2.0)
     erubi (1.7.0)
     execjs (2.7.0)
     faker (1.8.4)
@@ -221,6 +223,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   devise
+  envyable
   faker
   hirb
   jbuilder (~> 2.5)

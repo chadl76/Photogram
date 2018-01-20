@@ -1,0 +1,11 @@
+		<%if @user == current_user%>
+			<span><%=link_to "Edit Profile", edit_profile_path(@user.username), :class=> "btn btn-default profile-btn" %>	
+			</span>
+			<%else%>
+			<% if current_user_is_following(current_user.id, @user.id) %>
+			 <span><%=link_to "Following", unfollow_user_path, remote: true, :class => 'btn btn-default unfollow-btn', id: 'unfollow-btn', method: :post%></span>
+			 <%else%>
+			  <span><%=link_to "Follow", follow_user_path, remote: true, :class => 'btn btn-default follow-btn', id: 'follow-btn', method: :post%></span>
+			
+			<%end%>
+			<%end%>
