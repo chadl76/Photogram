@@ -1,0 +1,12 @@
+$('#follow-btn').attr('class', 'btn unfollow-btn')
+				.text('Follow')
+				.attr('href', "/<%= @user.username%>/unfollow_user")
+				.attr('id', 'unfollow-btn');
+
+
+const follow = $('#follow-btn').attr('class', 'btn unfollow-btn')
+				.text('Follow')
+				.attr('href', "/<%= @user.username%>/unfollow_user")
+				.attr('id', 'unfollow-btn');
+
+console.log(follow)

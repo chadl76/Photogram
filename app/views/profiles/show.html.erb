@@ -1,6 +1,41 @@
-<%if @user == current_user%>
-  <%=link_to "Edit Profile", edit_profile_path(@user.username) %>
-<%end%>
+
+<div class="bio-wrapper">
+	<div class="row">
+		<div class="col-xs-2 col-xs-offset-4 bio">
+			<div class="img-circle">
+				<%=image_tag @user.avatar.url(:medium), :class=> "img-responsive img-circle profile-image"%>
+			</div>
+		</div>
+		
+		<div class="col-xs-5">
+			<div class="profile-name">
+				<h2><%=@user.username%></h2>		
+			</div>
+			
+			<%if @user == current_user%>
+			<span><%=link_to "Edit Profile", edit_profile_path(@user.username), :class=> "btn btn-default profile-btn" %>	
+			</span>
+			<%else%>
+			<% if current_user_is_following(current_user.id, @user.id) %>
+			 <span><%=link_to "Following", unfollow_user_path, remote: true, :class => 'btn btn-default unfollow-btn', id: 'unfollow-btn', method: :post%></span>
+			 <%else%>
+			  <span><%=link_to "Follow", follow_user_path, remote: true, :class => 'btn btn-default follow-btn', id: 'follow-btn', method: :post%></span>
+			
+			<%end%>
+			<%end%>
+			<div class="user-bio">
+				<%=@user.bio%>
+			</div>
+			<div class="user-post-count">
+				<%= pluralize @user.posts.count, 'post' %>
+			</div>
+		</div>
+	</div>
+</div>
+
+	
+	
+</div>
 <div class="row posts-wrapper">
   <% @posts.each do |post| %>
    <div class="post">

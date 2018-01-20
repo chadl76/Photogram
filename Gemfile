@@ -40,6 +40,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'will_paginate'
 gem 'kaminari', '~>0.17.0'
+gem 'acts_as_votable'
 
 gem 'devise'
 gem 'bootstrap-sass'
@@ -48,6 +49,7 @@ gem 'jquery-rails'
 # gem 'capistrano-rails', group: :development
 
 gem 'jquery-turbolinks'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

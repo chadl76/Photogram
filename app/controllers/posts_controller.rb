@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_post, only: [:show, :edit, :update, :destroy] 
+	before_action :set_post, only: [:show, :edit, :update, :destroy, :like] 
 	before_action :owned_post, only: [:edit, :update, :destroy]
 
 	def index
@@ -47,6 +47,26 @@ class PostsController < ApplicationController
 		else
 			flash.now[:alert] = "couldn't create post"
 			render :new
+		end
+	end
+
+	def like
+		 @post.liked_by current_user
+			respond_to do |format|
+				format.html {redirect_to :back}
+				format.js
+			end
+		
+	end
+
+	def unlike
+			@post = Post.find(params[:id])
+			if @post.liked_by current_user
+
+			respond_to do |format| 
+				format.html {redirect_to :back}
+				format.js 
+			end
 		end
 	end
 		

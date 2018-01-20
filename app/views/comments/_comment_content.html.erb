@@ -1,6 +1,6 @@
 
 <div class="comment-wrapper">
-    <div class="comment">
+    <div class="comment ">
       
       <%if post.comments.any? %>
 
@@ -9,8 +9,9 @@
          
       
         
-         <div class="comment-name">
-    		   <%=comment.user.username %>
+         <div class="comment-name ">
+    <div class="name"><%=link_to "#{post.user.username}", profile_path(post.user.username)%></div>
+    		   
     		 </div>
           
          <div class="content"> 
@@ -24,6 +25,7 @@
         <%end%>
       <%end%>
     <%#end%>
+
     
 
     

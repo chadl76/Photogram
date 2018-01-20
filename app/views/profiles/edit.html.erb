@@ -1,1 +1,25 @@
 <%=@user.inspect %>
+
+<div class="edit-bio-wrapper">
+	<%=form_for @user, url: {action: "update"}, html: {multipart: true } do |f| %>
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="form-group">
+				<div class="img-circle">
+					<%=profile_avatar_select(@user) %>
+					<%=f.file_field :avatar, onChange: 'loadFile(event)' %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-5">
+			<h4>Update your bio:</h4>
+			<%=f.text_area :bio, label: false, rows: 4, class: "form-group text-center"%>
+			<%=f.submit "Update Profile", class: 'btn btn-success'%>
+		</div>
+	</div>
+	<%end%>
+	
+</div>
