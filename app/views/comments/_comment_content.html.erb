@@ -9,15 +9,13 @@
          
       
         
-         <div class="comment-name ">
-    <div class="name"><%=link_to "#{post.user.username}", profile_path(post.user.username)%></div>
-    		   
-    		 </div>
-          
-         <div class="content"> 
-            <%=comment.content %>
-           
-            <%if (current_user === comment.user)%>
+    <div class="comment-name ">
+    <div class="name"><%=link_to "#{current_user.username}", profile_path(post.user.username)%>
+    </div>
+    </div>
+    <div class="content"> 
+        <%=comment.content %>
+           <%if (current_user === comment.user)%>
               <span><%=link_to "", post_comment_path(post,comment), :method=> :delete, :class=> "comment-delete-btn glyphicon glyphicon-remove pull-right comment_delete_#{comment.id}"%>
               </span>
             <%end%>

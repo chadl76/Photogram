@@ -1,9 +1,9 @@
-<%=@user.inspect %>
 
-<div class="edit-bio-wrapper">
+
+<div class="edit-bio-wrapper col-xs-4 col-xs-offset-5">
 	<%=form_for @user, url: {action: "update"}, html: {multipart: true } do |f| %>
 	<div class="row">
-		<div class="col-xs-12">
+		<div class="col-xs-4 col-xs-offset- 3">
 			<div class="form-group">
 				<div class="img-circle">
 					<%=profile_avatar_select(@user) %>

@@ -1,31 +1,20 @@
-
- <div class="row posts-wrapper">
-
-<% @posts.each do |post| %>
-    
-  	<div class="post">
-
-    <%= render partial: "posts/post_header", :locals => {:post => post}%>
-  
-    <%= render partial: "comments/comment_content", :locals => {:post=> post} %><div class="comment_<%=post.id%>"></div>
-
-    <%=render partial: 'comments/comment_form', :locals => {:post => post} %>
-    
-    
-    </div>
-
-
-
-<%end%>
+<div class="row posts-wrapper">
+  <% @posts.each do |post| %>
+   <div class="post">
+	 <%= render partial: "posts/post_header", :locals => {:post => post}%>
+  	 <%= render partial: "comments/comment_content", :locals => {:post=> post} %><div class="comment_<%=post.id%>"></div>
+	 <%=render partial: 'comments/comment_form', :locals => {:post => post} %>
+   </div>
+  <%end%>
 		
-		<%if @posts.count > 3 %>
-		<div class="row">
-			<div class="col-xs-6 col-xs-offset-4">
-				<div class="load-more-wrapper">
-					<%=link_to "Load More", posts_path, :class=>"load-more-posts-btn" %>
-				</div>
+	<%if @posts.count > 3 %>
+	  <div class="row">
+		<div class="col-xs-6 col-xs-offset-4">
+			<div class="load-more-wrapper">
+				<%=link_to "Load More", posts_path, :class=>"load-more-posts-btn" %>
 			</div>
 		</div>
+	   </div>
 		<%= paginate @posts %>
 		<%end%>
 </div>
